@@ -55,13 +55,18 @@ public class Javac {
 //        for (File file : classpath) {
 //            System.out.println(file.getAbsolutePath() + " " + file.exists() + " " + file.isDirectory());
 //        }
-        javacOptions = new ArrayList<>(Arrays.asList("-encoding", "utf8", "-implicit:none", "-bootclasspath", bootstrap.toString()));
+
+        System.out.println("??? " + bootstrap.toString());
+
+        String bootstrapPath = "/Users/treblereel/workplace/redhat/j2cl-tools/j2cl-maven-plugin/j2cl-maven-plugin/target/it-repo/org/kie/j2cl/tools/javac-bootstrap-classpath/v20250822-1/javac-bootstrap-classpath-v20250822-1.jar";
+
+        javacOptions = new ArrayList<>(Arrays.asList("-encoding", "utf8", "-implicit:none", "-bootclasspath", bootstrapPath));
         if (generatedClassesPath == null) {
             javacOptions.add("-proc:none");
         }
-        if (SourceVersion.latestSupported().compareTo(SourceVersion.RELEASE_11) > 0) {
+        if (SourceVersion.latestSupported().compareTo(SourceVersion.RELEASE_21) > 0) {
             //java 11+
-            javacOptions.add("--release=11");
+            javacOptions.add("--release=21");
         }
         if (!processors.isEmpty()) {
             javacOptions.add("-processor");

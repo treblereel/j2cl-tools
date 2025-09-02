@@ -79,9 +79,9 @@
 
   <properties>
     <!-- Plugin dependencies versions-->
-    <maven.version>3.3.9</maven.version>
+    <maven.version>3.6.1</maven.version> <!-- TODO -->
     <maven.resolver.version>1.3.1</maven.resolver.version>
-    <maven.enforcer.plugin.version>3.4.1</maven.enforcer.plugin.version>
+    <maven.enforcer.plugin.version>3.6.1</maven.enforcer.plugin.version>
     <maven.source.plugin.version>3.0.1</maven.source.plugin.version>
     <maven.javadoc.plugin.version>3.0.1</maven.javadoc.plugin.version>
     <maven.gpg.plugin.version>1.6</maven.gpg.plugin.version>
@@ -89,8 +89,8 @@
     <!-- Builder dependencies versions -->
     <j2cl.version>v20241110-1</j2cl.version>
     <closure.compiler.unshaded.version>v20241106-1</closure.compiler.unshaded.version>
-    <commons.codec.version>1.11</commons.codec.version>
-    <commons.io.version>2.7</commons.io.version>
+    <commons.codec.version>1.9</commons.codec.version>
+    <commons.io.version>2.20.0</commons.io.version>
 
     <!-- Test -->
     <junit.version>4.13.1</junit.version>
@@ -101,11 +101,11 @@
     <plexus.utils.version>3.1.0</plexus.utils.version>
     <plexus.classworlds.version>2.5.2</plexus.classworlds.version>
     <plexus.interpolation.version>1.25</plexus.interpolation.version>
-    <guava.version>31.1-jre</guava.version>
-    <error.prone.annotations.version>2.1.3</error.prone.annotations.version>
+    <guava.version>33.4.0-jre</guava.version>
+    <error.prone.annotations.version>2.36.0</error.prone.annotations.version>
     <jsr305.version>3.0.2</jsr305.version>
-    <commons.lang3.version>3.8.1</commons.lang3.version>
-    <google.turbine.version>0.8.0</google.turbine.version>
+    <commons.lang3.version>3.18.0</commons.lang3.version>
+    <google.turbine.version>0.11.0</google.turbine.version>
     <slf4j.api.version>1.7.5</slf4j.api.version>
 
     <!-- Test goal -->
@@ -120,8 +120,8 @@
     <!-- Configurations -->
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.build.outputEncoding>UTF-8</project.build.outputEncoding>
-    <maven.compiler.source>11</maven.compiler.source>
-    <maven.compiler.target>11</maven.compiler.target>
+    <maven.compiler.source>21</maven.compiler.source>
+    <maven.compiler.target>21</maven.compiler.target>
   </properties>
 
   <dependencyManagement>

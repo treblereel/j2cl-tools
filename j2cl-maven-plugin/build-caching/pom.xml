@@ -13,14 +13,12 @@
 
     <name>Build caching tools</name>
 
-
-
     <dependencies>
         <!-- watch service -->
         <dependency>
             <groupId>io.methvin</groupId>
             <artifactId>directory-watcher</artifactId>
-            <version>0.15.0</version>
+            <version>0.19.1</version>
         </dependency>
 
         <!-- JSON serialization -->
@@ -37,9 +35,4 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-
-
-
-
-
 </project>
