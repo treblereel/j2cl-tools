@@ -68,6 +68,11 @@
                 </exclusion>
             </exclusions>
         </dependency>
+        <dependency>
+            <groupId>org.kie.j2cl.tools</groupId>
+            <artifactId>backend-closure</artifactId>
+            <version>${j2cl.version}</version>
+        </dependency>
 
         <!-- closure compiler dependencies -->
         <dependency>
@@ -81,6 +86,10 @@
                 <exclusion>
                     <groupId>com.google.guava</groupId>
                     <artifactId>failureaccess</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.google.protobuf</groupId>
+                    <artifactId>protobuf-java</artifactId>
                 </exclusion>
             </exclusions>
         </dependency>

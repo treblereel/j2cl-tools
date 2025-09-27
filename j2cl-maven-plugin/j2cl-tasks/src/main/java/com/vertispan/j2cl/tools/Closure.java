@@ -80,6 +80,13 @@ public class Closure {
 
         Compiler jsCompiler = new Compiler(System.err);
 
+        jsInputs.forEach((logicalPath, files) -> {
+            if(logicalPath.contains("org.kie.j2cl.tools-jre-v20250822-1-jszip")) {
+                System.out.println("Input: " + logicalPath);
+                files.forEach(f -> System.out.println("  " + f) );
+            }
+        });
+
         // List the parent directories of each input so that module resolution works as expected
         jsInputs.keySet().forEach(parentPath -> {
             jscompArgs.add("--js_module_root");

@@ -113,8 +113,7 @@ public abstract class AbstractBuildMojo extends AbstractCacheMojo {
     private boolean incrementalEnabled;
 
     private List<DependencyReplacement> defaultDependencyReplacements = Arrays.asList(
-            new DependencyReplacement("com.google.jsinterop:base", "org.kie.j2cl.tools.jsinterop:base:" + Versions.VERTISPAN_JSINTEROP_BASE_VERSION),
-            new DependencyReplacement("org.realityforge.com.google.jsinterop:base", "org.kie.j2cl.tools.jsinterop:base:" + Versions.VERTISPAN_JSINTEROP_BASE_VERSION),
+            new DependencyReplacement("com.google.jsinterop:base", "org.kie.j2cl.tools.jsinterop:jsinterop-base:" + Versions.VERTISPAN_JSINTEROP_BASE_VERSION),
             // New GWT groupId since GWT 2.10
             new DependencyReplacement("org.gwtproject:gwt-user", null),
             new DependencyReplacement("org.gwtproject:gwt-dev", null),

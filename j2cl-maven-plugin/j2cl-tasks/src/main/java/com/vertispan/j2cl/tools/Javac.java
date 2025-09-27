@@ -58,9 +58,12 @@ public class Javac {
 
         System.out.println("??? " + bootstrap.toString());
 
+
+
         String bootstrapPath = "/Users/treblereel/workplace/redhat/j2cl-tools/j2cl-maven-plugin/j2cl-maven-plugin/target/it-repo/org/kie/j2cl/tools/javac-bootstrap-classpath/v20250822-1/javac-bootstrap-classpath-v20250822-1.jar";
 
         javacOptions = new ArrayList<>(Arrays.asList("-encoding", "utf8", "-implicit:none", "-bootclasspath", bootstrapPath));
+        javacOptions.add("-AtestPlatform=CLOSURE");
         if (generatedClassesPath == null) {
             javacOptions.add("-proc:none");
         }
