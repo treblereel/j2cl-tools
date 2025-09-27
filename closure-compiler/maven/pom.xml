@@ -24,41 +24,7 @@
   <packaging>jar</packaging>
 
   <name>Closure Compiler Unshaded</name>
-  <version>v20241106-1</version>
-
-  <issueManagement>
-    <system>GitHub Issues</system>
-    <url>http://github.com/vertispan/closure-compiler/issues</url>
-  </issueManagement>
-
-  <developers>
-    <developer>
-      <id>closure-compiler-authors</id>
-      <name>Closure Compiler Authors</name>
-      <email>closure-compiler-discuss@googlegroups.com</email>
-    </developer>
-    <developer>
-      <name>Colin Alworth</name>
-      <email>colin@vertispan.com</email>
-      <organization>Vertispan LLC</organization>
-      <organizationUrl>https://www.vertispan.com/</organizationUrl>
-    </developer>
-  </developers>
-
-  <licenses>
-    <license>
-      <name>The Apache Software License, Version 2.0</name>
-      <url>http://www.apache.org/licenses/LICENSE-2.0.html</url>
-      <distribution>repo</distribution>
-    </license>
-  </licenses>
-
-  <scm>
-    <url>http://github.com/google/closure-compiler</url>
-    <connection>scm:git:git://github.com/google/closure-compiler.git</connection>
-    <developerConnection>scm:git:ssh://git@github.com/google/closure-compiler.git</developerConnection>
-    <tag>HEAD</tag>
-  </scm>
+  <version>v20250903-1</version>
 
   <url>https://developers.google.com/closure/compiler/</url>
   <description>
@@ -70,16 +36,6 @@
     Google Docs.
   </description>
   <inceptionYear>2009</inceptionYear>
-
-  <properties>
-    <maven.deploy.plugin>2.8.2</maven.deploy.plugin>
-    <maven.gpg.plugin>1.6</maven.gpg.plugin>
-    <maven.javadoc.plugin>3.2.0</maven.javadoc.plugin>
-    <maven.source.plugin>3.2.1</maven.source.plugin>
-    <maven.release.plugin>2.5.3</maven.release.plugin>
-    <maven.surfire.plugin>3.0.0-M1</maven.surfire.plugin>
-    <maven.scm.provider.gitexe>1.9.5</maven.scm.provider.gitexe>
-  </properties>
 
   <dependencies>
     <dependency>
@@ -150,7 +106,7 @@
             <phase>prepare-package</phase>
             <configuration>
               <target>
-                <unzip src="../bazel-bin/compiler_unshaded_bundle/closure-compiler-unshaded-1.0-SNAPSHOT.jar" dest="${project.build.outputDirectory}" />
+                <unzip src="../bazel-bin/compiler_unshaded_bundle/closure-compiler-unshaded.jar" dest="${project.build.outputDirectory}" />
               </target>
             </configuration>
             <goals>
@@ -183,84 +139,6 @@
           </execution>
         </executions>
       </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-deploy-plugin</artifactId>
-        <version>${maven.deploy.plugin}</version>
-        <executions>
-          <execution>
-            <id>default-deploy</id>
-            <phase>deploy</phase>
-            <goals>
-              <goal>deploy</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-      <plugin>
-        <artifactId>maven-jar-plugin</artifactId>
-        <version>3.1.0</version>
-        <executions>
-          <execution>
-            <id>javadoc-jar</id>
-            <phase>package</phase>
-            <goals>
-              <goal>jar</goal>
-            </goals>
-            <configuration>
-              <classifier>javadoc</classifier>
-            </configuration>
-          </execution>
-          <execution>
-            <id>sources-jar</id>
-            <phase>package</phase>
-            <goals>
-              <goal>jar</goal>
-            </goals>
-            <configuration>
-              <classifier>sources</classifier>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
     </plugins>
   </build>
-
-  <profiles>
-    <!-- release profile to create sources, javadoc, and sign all artifacts before uploading -->
-    <profile>
-      <id>release</id>
-      <build>
-        <plugins>
-          <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-gpg-plugin</artifactId>
-            <version>1.6</version>
-            <executions>
-              <execution>
-                <id>sign-artifacts</id>
-                <phase>verify</phase>
-                <goals>
-                  <goal>sign</goal>
-                </goals>
-              </execution>
-            </executions>
-          </plugin>
-        </plugins>
-      </build>
-    </profile>
-  </profiles>
-
-  <distributionManagement>
-    <repository>
-      <id>jboss-public-repository-group</id>
-      <name>JBoss Public Repository Group</name>
-      <url>https://repository.jboss.org/nexus/service/local/staging/deploy/maven2/</url>
-    </repository>
-    <snapshotRepository>
-      <id>jboss-snapshots-repository</id>
-      <name>JBoss Snapshot Repository</name>
-      <url>https://repository.jboss.org/nexus/content/repositories/snapshots/</url>
-    </snapshotRepository>
-  </distributionManagement>
 </project>
