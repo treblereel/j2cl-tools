@@ -48,12 +48,6 @@ public interface JsArrayLike<T extends @Nullable Object> {
     return (T) InternalJsUtil.getAt(this, index);
   }
 
-  @Deprecated
-  @JsOverlay
-  default @Nullable Any getAnyAt(int index) {
-    return getAtAsAny(index);
-  }
-
   @JsOverlay
   default @Nullable Any getAtAsAny(int index) {
     return (Any) InternalJsUtil.getAt(this, index);

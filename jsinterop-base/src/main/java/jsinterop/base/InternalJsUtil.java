@@ -19,6 +19,7 @@ package jsinterop.base;
 import com.google.gwt.core.client.UnsafeNativeLong;
 import javaemul.internal.annotations.HasNoSideEffects;
 import org.jspecify.annotations.Nullable;
+
 import jsinterop.annotations.JsMethod;
 import jsinterop.annotations.JsPackage;
 
@@ -110,7 +111,7 @@ class InternalJsUtil {
     return obj;
   }-*/;
 
-   @JsMethod(name="castToAny")
+  @JsMethod(name="castToAny")
   public static native char asChar(@Nullable Object obj) /*-{
     return obj;
   }-*/;
@@ -161,7 +162,7 @@ class InternalJsUtil {
     return obj.length = length;
   }-*/;
 
-   @JsMethod
+  @JsMethod
   public static native <T> JsConstructorFn<T> toCtor(Class<T> clazz) /*-{
     return clazz.@java.lang.Class::jsConstructor;
   }-*/;

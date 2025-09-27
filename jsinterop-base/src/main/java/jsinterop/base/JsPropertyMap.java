@@ -80,12 +80,6 @@ public interface JsPropertyMap<T extends @Nullable Object> {
     return InternalJsUtil.getObjectByName(qualifiedName, this);
   }
 
-  @Deprecated
-  @JsOverlay
-  default @Nullable Any getAny(String propertyName) {
-    return getAsAny(propertyName);
-  }
-
   @JsOverlay
   default @Nullable Any getAsAny(String propertyName) {
     return (Any) InternalJsUtil.get(this, propertyName);

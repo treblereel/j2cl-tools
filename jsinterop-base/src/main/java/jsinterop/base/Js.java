@@ -23,8 +23,9 @@ import javaemul.internal.annotations.HasNoSideEffects;
 import javaemul.internal.annotations.UncheckedCast;
 import jsinterop.annotations.JsMethod;
 import jsinterop.annotations.JsProperty;
-import jsinterop.annotations.JsPackage;
 import org.jspecify.annotations.Nullable;
+
+import jsinterop.annotations.JsPackage;
 
 /**
  * Utilities to provide access to JavaScript language constructs that are not available in pure
@@ -158,7 +159,7 @@ public final class Js {
   @JsMethod
   @HasNoSideEffects
   public static native <T extends @Nullable Object> T andAlso(
-      @DoNotAutobox T obj1, @DoNotAutobox T obj2) /*-{
+          @DoNotAutobox T obj1, @DoNotAutobox T obj2) /*-{
     return obj1 && obj2;
   }-*/;
 
@@ -166,7 +167,7 @@ public final class Js {
   @JsMethod
   @HasNoSideEffects
   public static native <T extends @Nullable Object> T orElse(
-      @DoNotAutobox T obj1, @DoNotAutobox T obj2) /*-{
+          @DoNotAutobox T obj1, @DoNotAutobox T obj2) /*-{
     return obj1 || obj2;
   }-*/;
 
@@ -189,7 +190,7 @@ public final class Js {
   @JsMethod
   @HasNoSideEffects
   public static native boolean isTripleEqual(
-      @DoNotAutobox @Nullable Object o1, @DoNotAutobox @Nullable Object o2) /*-{
+          @DoNotAutobox @Nullable Object o1, @DoNotAutobox @Nullable Object o2) /*-{
     return o1 === o2;
   }-*/;
 

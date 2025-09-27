@@ -1,8 +1,9 @@
 # Description:
 #  JsInterop base classes
 
-load("@bazel_common_javadoc//:javadoc.bzl", "javadoc_library")
-load("@com_google_j2cl//build_defs:rules.bzl", "j2cl_library")
+load("@google_bazel_common//tools/javadoc:javadoc.bzl", "javadoc_library")
+load("@rules_java//java:defs.bzl", "java_library")
+load("@j2cl//build_defs:rules.bzl", "j2cl_library")
 
 package(
     default_applicable_licenses = ["//:license"],
@@ -15,11 +16,13 @@ package(
 java_library(
     name = "base",
     srcs = glob(["**/*.java"]),
-    resources = ["Base.gwt.xml"] + glob(["*.js", "super/*.java"]),
+    # Keep compatibility with Java 11 for open source GWT.
+    javacopts = ["-source 11 -target 11"],
+    resources = ["Base.gwt.xml"],
     deps = [
         "//third_party:jspecify_annotations",
-        "@com_google_j2cl//:jsinterop-annotations",
-        "@com_google_j2cl//jre/java:javaemul_internal_annotations",
+        "@j2cl//:jsinterop-annotations",
+        "@j2cl//jre/java:javaemul_internal_annotations",
     ],
 )
 
@@ -32,8 +35,8 @@ javadoc_library(
     ],
     deps = [
         "//third_party:jspecify_annotations",
-        "@com_google_j2cl//:jsinterop-annotations",
-        "@com_google_j2cl//jre/java:javaemul_internal_annotations",
+        "@j2cl//:jsinterop-annotations",
+        "@j2cl//jre/java:javaemul_internal_annotations",
     ],
 )
 
@@ -44,8 +47,8 @@ j2cl_library(
     experimental_enable_jspecify_support_do_not_enable_without_jspecify_static_checking_or_you_might_cause_an_outage = True,
     deps = [
         "//third_party:jspecify_annotations-j2cl",
-        "@com_google_j2cl//:jsinterop-annotations-j2cl",
-        "@com_google_j2cl//jre/java:javaemul_internal_annotations-j2cl",
+        "@j2cl//:jsinterop-annotations-j2cl",
+        "@j2cl//jre/java:javaemul_internal_annotations-j2cl",
     ],
 )
 

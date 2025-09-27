@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Google Inc.
+ * Copyright 2017 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy of
@@ -14,16 +14,22 @@
  * the License.
  *
  */
-package jsinterop.base;
 
-import org.junit.runner.RunWith;
-import org.junit.runners.Suite;
-import org.junit.runners.Suite.SuiteClasses;
+/**
+ * This file provides the @defines for jsinterop configuration options.
+ * See InternalPreconditions.java for details.
+ */
 
-@RunWith(Suite.class)
-@SuiteClasses({
-  AnyOptimizationTest.class,
-  JsArrayLikeOptimizationTest.class,
-  JsPropertyMapOptimizationTest.class
-})
-public class AllOptimizationTests {}
+goog.module('jsinterop');
+
+const jre = goog.require('jre');
+
+// Note that disabling checking only disables it for production.
+
+/** @define {string} */
+const checks = goog.define('jsinterop.checks', 'DISABLED');
+jre.addSystemPropertyFromGoogDefine('jsinterop.checks', checks);
+
+exports = {
+  checks,
+};
