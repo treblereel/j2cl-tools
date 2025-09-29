@@ -210,7 +210,7 @@ public class ClosureBundleTask extends TaskFactory {
                             ImmutableMap.of()
                     ),
                     ""
-            )).useEval(true);
+            )).useEval(false);
 
             try (OutputStream outputStream = Files.newOutputStream(Paths.get(outputFile));
                  BufferedWriter bundleOut = new BufferedWriter(new OutputStreamWriter(outputStream, StandardCharsets.UTF_8))) {

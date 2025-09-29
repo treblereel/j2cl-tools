@@ -52,17 +52,7 @@ public class Javac {
 
     public Javac(BuildLog log, File generatedClassesPath, List<File> sourcePaths, List<File> classpath, File classesDirFile, File bootstrap, Set<String> processors, Map<String, String> annotationProcessorsArgs) throws IOException {
         this.log = log;
-//        for (File file : classpath) {
-//            System.out.println(file.getAbsolutePath() + " " + file.exists() + " " + file.isDirectory());
-//        }
-
-        System.out.println("??? " + bootstrap.toString());
-
-
-
-        String bootstrapPath = "/Users/treblereel/workplace/redhat/j2cl-tools/j2cl-maven-plugin/j2cl-maven-plugin/target/it-repo/org/kie/j2cl/tools/javac-bootstrap-classpath/v20250822-1/javac-bootstrap-classpath-v20250822-1.jar";
-
-        javacOptions = new ArrayList<>(Arrays.asList("-encoding", "utf8", "-implicit:none", "-bootclasspath", bootstrapPath));
+        javacOptions = new ArrayList<>(Arrays.asList("-encoding", "utf8", "-implicit:none", "-bootclasspath", bootstrap.getAbsolutePath()));
         javacOptions.add("-AtestPlatform=CLOSURE");
         if (generatedClassesPath == null) {
             javacOptions.add("-proc:none");

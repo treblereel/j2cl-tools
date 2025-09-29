@@ -99,7 +99,7 @@ public abstract class AbstractBuildMojo extends AbstractCacheMojo {
     @Parameter(defaultValue = "org.kie.j2cl.tools:junit-runtime:zip:jszip:" + Versions.J2CL_VERSION, required = true)
     protected String runtimeJsZip;
 
-    @Parameter(defaultValue = "org.jspecify:jspecify:0.3.0", required = true)
+    @Parameter(defaultValue = "org.jspecify:jspecify:1.0.0", required = true)
     protected String jspecify;
 
     // optional, if not specified, we'll use the defaults

@@ -1332,7 +1332,7 @@ public abstract class DeclaredTypeDescriptor extends TypeDescriptor {
 
   abstract Builder toBuilder();
 
-  static Builder newBuilder() {
+  public static Builder newBuilder() {
     return new AutoValue_DeclaredTypeDescriptor.Builder();
   }
 

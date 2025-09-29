@@ -310,10 +310,10 @@ public class TestMojo extends AbstractBuildMojo {
         );
 
         List<Artifact> extraJsZips = Arrays.asList(
-                //getMavenArtifactWithCoords(testJsZip),
+                getMavenArtifactWithCoords(testJsZip),
+                getMavenArtifactWithCoords(bootstrapJsZip),
                 getMavenArtifactWithCoords(jreJsZip),
-                getMavenArtifactWithCoords(runtimeJsZip),
-                getMavenArtifactWithCoords(bootstrapJsZip)
+                getMavenArtifactWithCoords(runtimeJsZip)
         );
 
         Xpp3DomConfigValueProvider config = new Xpp3DomConfigValueProvider(merge((Xpp3Dom) plugin.getConfiguration(), mojoExecution.getConfiguration()), expressionEvaluator, repoSession, repositories, repoSystem, extraClasspath, getLog());
