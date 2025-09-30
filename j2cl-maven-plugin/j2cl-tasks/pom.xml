@@ -138,4 +138,27 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>templating-maven-plugin</artifactId>
+                <version>1.0.0</version>
+                <executions>
+                    <execution>
+                        <id>generate-buildconfig</id>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>filter-sources</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <sourceDirectory>src/main/build-templates</sourceDirectory>
+                    <outputDirectory>${project.build.directory}/generated-sources/build-info</outputDirectory>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
