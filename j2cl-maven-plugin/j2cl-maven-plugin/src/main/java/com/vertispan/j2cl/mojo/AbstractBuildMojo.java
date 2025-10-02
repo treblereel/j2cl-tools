@@ -87,7 +87,7 @@ public abstract class AbstractBuildMojo extends AbstractCacheMojo {
     @Parameter(defaultValue = "org.kie.j2cl.tools:gwt-internal-annotations:" + Versions.J2CL_VERSION, required = true)
     protected String internalAnnotationsJar;
 
-    @Parameter(defaultValue = "com.google.jsinterop:jsinterop-annotations:2.0.0", required = true)
+    @Parameter(defaultValue = "com.google.jsinterop:jsinterop-annotations:2.0.2", required = true)
     protected String jsinteropAnnotationsJar;
 
     @Parameter(defaultValue = "org.kie.j2cl.tools:junit-annotations:" + Versions.J2CL_VERSION, required = true)
