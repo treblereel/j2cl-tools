@@ -306,7 +306,7 @@
             <dependency>
                 <groupId>org.kie.j2cl.tools</groupId>
                 <artifactId>closure-compiler-unshaded</artifactId>
-                <version>v20241106-1</version>
+                <version>v20250903-1</version>
                 <exclusions>
                     <exclusion>
                         <groupId>com.google.elemental2</groupId>
@@ -328,7 +328,7 @@
             <dependency>
                 <groupId>org.jspecify</groupId>
                 <artifactId>jspecify</artifactId>
-                <version>0.3.0</version>
+                <version>1.0.0</version>
             </dependency>
 
             <dependency>
@@ -341,7 +341,7 @@
             <dependency>
                 <groupId>com.google.jsinterop</groupId>
                 <artifactId>jsinterop-annotations</artifactId>
-                <version>2.0.2</version>
+                <version>2.1.0</version>
             </dependency>
             <dependency>
                 <groupId>com.google.j2objc</groupId>
