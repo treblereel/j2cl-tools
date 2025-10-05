@@ -103,6 +103,7 @@
         <module>junit/gwttestcase</module>
         <module>junit/annotations</module>
         <module>junit/async</module>
+	<module>junit/processor/unshaded-pom.xml</module>
         <module>junit/processor</module>
         <module>junit/runtime</module>
     </modules>
