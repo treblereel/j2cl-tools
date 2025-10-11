@@ -9,7 +9,7 @@
     <version>v20250822-1</version>
     <packaging>pom</packaging>
 
-    <name>J2CL</name>
+    <name>J2CL parent</name>
     <description>
         J2CL is a powerful, simple and lightweight transpiler from Java to Closure style JavaScript.
         The project is designed, implemented, and maintained by the J2CL team at Google.
@@ -103,23 +103,10 @@
         <module>junit/gwttestcase</module>
         <module>junit/annotations</module>
         <module>junit/async</module>
-	<module>junit/processor/unshaded-pom.xml</module>
+	    <module>junit/processor/unshaded-pom.xml</module>
         <module>junit/processor</module>
         <module>junit/runtime</module>
     </modules>
-
-    <distributionManagement>
-        <repository>
-            <id>jboss-public-repository-group</id>
-            <name>JBoss Public Repository Group</name>
-            <url>https://repository.jboss.org/nexus/service/local/staging/deploy/maven2/</url>
-        </repository>
-        <snapshotRepository>
-            <id>jboss-snapshots-repository</id>
-            <name>JBoss Snapshot Repository</name>
-            <url>https://repository.jboss.org/nexus/content/repositories/snapshots/</url>
-        </snapshotRepository>
-    </distributionManagement>
 
     <build>
         <pluginManagement>
@@ -385,4 +372,24 @@
             </build>
         </profile>
     </profiles>
+    <repositories>
+        <repository>
+            <id>jboss</id>
+            <name>JBoss Public Repo</name>
+            <url>https://repository.jboss.org/nexus/content/groups/public</url>
+        </repository>
+        <repository>
+            <id>sonatype-public</id>
+            <name>Sonatype Public Snapshots Repo</name>
+            <url>https://oss.sonatype.org/content/repositories/public</url>
+        </repository>
+    </repositories>
+
+    <distributionManagement>
+        <repository>
+            <id>jboss-public-repository-group</id>
+            <name>JBoss Public Repository Group</name>
+            <url>https://repository.jboss.org/nexus/repository/releases/</url>
+        </repository>
+    </distributionManagement>
 </project>
