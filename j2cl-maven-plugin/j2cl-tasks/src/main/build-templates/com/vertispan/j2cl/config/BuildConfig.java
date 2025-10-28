@@ -18,4 +18,5 @@ package com.vertispan.j2cl.config;
 
 public final class BuildConfig {
     public static final String J2CL_VERSION = "${j2cl.version}";
+    public static final String J2CL_BASE_VERSION = "${j2cl.version}";
 }

@@ -21,6 +21,7 @@ import com.vertispan.j2cl.build.Project;
 import com.vertispan.j2cl.build.TaskRegistry;
 import com.vertispan.j2cl.build.provided.SkipAptTask;
 import com.vertispan.j2cl.build.task.OutputTypes;
+import com.vertispan.j2cl.config.BuildConfig;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.maven.RepositoryUtils;
 import org.apache.maven.artifact.Artifact;
@@ -78,7 +79,7 @@ public abstract class AbstractBuildMojo extends AbstractCacheMojo {
     @Parameter(defaultValue = "org.kie.j2cl.tools:jre:zip:jszip:" + Versions.J2CL_VERSION, required = true)
     protected String jreJsZip;
 
-    @Parameter(defaultValue = "org.kie.j2cl.tools:bootstrap:zip:jszip:" + Versions.J2CL_VERSION, required = true)
+    @Parameter(defaultValue = "org.kie.j2cl.tools:bootstrap:zip:jszip:" + BuildConfig.J2CL_BASE_VERSION, required = true)
     protected String bootstrapJsZip;
 
     @Parameter(defaultValue = "org.kie.j2cl.tools:closure-test:zip:jszip:" + Versions.J2CL_VERSION, required = true)

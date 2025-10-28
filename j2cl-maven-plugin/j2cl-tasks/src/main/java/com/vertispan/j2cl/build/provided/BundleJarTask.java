@@ -26,7 +26,6 @@ import org.apache.commons.io.FileUtils;
 import java.io.File;
 import java.io.IOException;
 import java.io.UncheckedIOException;
-import java.nio.file.FileSystems;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.PathMatcher;
@@ -60,6 +59,7 @@ public class BundleJarTask extends TaskFactory {
     }
 
     private static final String J2CL_VERSION = com.vertispan.j2cl.config.BuildConfig.J2CL_VERSION;
+    private static final String J2CL_BASE_VERSION = com.vertispan.j2cl.config.BuildConfig.J2CL_BASE_VERSION;
 
     @Override
     public Task resolve(Project project, Config config) {
@@ -75,7 +75,7 @@ public class BundleJarTask extends TaskFactory {
 
 
         Map<String, Input> bootstrap = new LinkedHashMap<>();
-        bootstrap.put(String.format("org.kie.j2cl.tools:bootstrap:%s:jszip", J2CL_VERSION), null);
+        bootstrap.put(String.format("org.kie.j2cl.tools:bootstrap:%s:jszip", J2CL_BASE_VERSION), null);
         bootstrap.put(String.format("org.kie.j2cl.tools:jre:%s:jszip", J2CL_VERSION), null);
         bootstrap.put(String.format("org.kie.j2cl.tools:closure-test:%s:jszip", J2CL_VERSION), null);
         bootstrap.put(String.format("org.kie.j2cl.tools:junit-runtime:%s:jszip", J2CL_VERSION), null);

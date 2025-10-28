@@ -6,7 +6,7 @@
 
     <groupId>org.kie.j2cl.tools</groupId>
     <artifactId>j2cl-tools</artifactId>
-    <version>0.23.4</version>
+    <version>0.23.5</version>
     <packaging>pom</packaging>
 
     <name>J2CL Build Tools</name>
@@ -88,6 +88,7 @@
 
         <!-- Builder dependencies versions -->
         <j2cl.version>v20250822-1</j2cl.version>
+        <j2cl.base.version>v20251027-1</j2cl.base.version>
         <closure.compiler.unshaded.version>v20250903-1</closure.compiler.unshaded.version>
         <commons.codec.version>1.9</commons.codec.version>
         <commons.io.version>2.20.0</commons.io.version>
