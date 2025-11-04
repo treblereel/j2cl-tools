@@ -4,7 +4,7 @@
   <parent>
     <groupId>org.kie.j2cl.tools.di.ui</groupId>
     <artifactId>parent</artifactId>
-    <version>0.8.1</version>
+    <version>0.9</version>
   </parent>
 
   <artifactId>generator</artifactId>
@@ -71,10 +71,6 @@
     <dependency>
       <groupId>org.kie.j2cl.tools.di</groupId>
       <artifactId>processor</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.kie.j2cl.tools.processors</groupId>
-      <artifactId>utils</artifactId>
     </dependency>
     <dependency>
       <groupId>org.kie.j2cl.tools.di.ui</groupId>

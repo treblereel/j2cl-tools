@@ -24,8 +24,7 @@ import javax.lang.model.type.TypeMirror;
 
 import org.kie.j2cl.tools.di.apt.generator.context.ExecutionEnv;
 import org.kie.j2cl.tools.di.apt.generator.context.IOCContext;
-import org.kie.j2cl.tools.processors.utils.J2CLUtils;
-
+import org.treblereel.j2cl.processors.utils.J2CLUtils;
 
 public class MethodCallGenerator {
 

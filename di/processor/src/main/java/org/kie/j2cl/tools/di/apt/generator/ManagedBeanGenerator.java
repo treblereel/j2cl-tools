@@ -57,7 +57,7 @@ import org.kie.j2cl.tools.di.apt.logger.TreeLogger;
 import org.kie.j2cl.tools.di.apt.util.TypeUtils;
 import org.kie.j2cl.tools.di.core.InstanceFactory;
 import org.kie.j2cl.tools.di.core.internal.QualifierUtil;
-import org.kie.j2cl.tools.processors.utils.J2CLUtils;
+import org.treblereel.j2cl.processors.utils.J2CLUtils;
 
 
 @Generator(priority = 1)

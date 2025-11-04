@@ -65,7 +65,7 @@ import org.kie.j2cl.tools.di.apt.generator.context.IOCContext;
 import org.kie.j2cl.tools.di.core.Reflect;
 import org.kie.j2cl.tools.di.core.internal.SimpleInstanceFactoryImpl;
 import org.kie.j2cl.tools.di.core.internal.proxy.OnFieldAccessed;
-import org.kie.j2cl.tools.processors.utils.J2CLUtils;
+import org.treblereel.j2cl.processors.utils.J2CLUtils;
 
 public class GenerationUtils {
 
