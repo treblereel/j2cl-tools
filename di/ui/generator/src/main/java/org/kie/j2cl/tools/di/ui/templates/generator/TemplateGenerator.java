@@ -428,7 +428,7 @@ public class TemplateGenerator extends IOCGenerator<BeanDefinition> {
                                TemplateDefinition templateDefinition) {
         templateContext.getRoot().getAttributes().stream()
                 .map(attr -> new org.kie.j2cl.tools.di.ui.templates.generator.dto.Attribute(attr.getKey(),
-                        attr.getValue()))
+                        attr.getValue().replaceAll("\\s+", " ").trim()))
                 .forEach(a -> templateDefinition.getAttributes().add(a));
     }
 
