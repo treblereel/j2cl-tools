@@ -30,7 +30,10 @@ import javax.annotation.processing.RoundEnvironment;
 import javax.annotation.processing.SupportedSourceVersion;
 import javax.lang.model.SourceVersion;
 import javax.lang.model.element.TypeElement;
+import javax.lang.model.type.MirroredTypesException;
+import javax.lang.model.type.TypeMirror;
 import org.kie.j2cl.tools.yaml.mapper.api.annotation.YAMLMapper;
+import org.kie.j2cl.tools.yaml.mapper.api.annotation.YamlMappers;
 import org.kie.j2cl.tools.yaml.mapper.api.annotation.YamlTypeDeserializer;
 import org.kie.j2cl.tools.yaml.mapper.api.annotation.YamlTypeSerializer;
 import org.kie.j2cl.tools.yaml.mapper.context.GenerationContext;
@@ -58,6 +61,19 @@ public class ApplicationProcessor extends AbstractProcessor {
       roundEnvironment.getElementsAnnotatedWith(YAMLMapper.class).stream()
           .map(MoreElements::asType)
           .forEach(beans::add);
+
+      roundEnvironment.getElementsAnnotatedWith(YamlMappers.class).stream()
+          .flatMap(e -> Arrays.stream(e.getAnnotationsByType(YamlMappers.class)))
+          .forEach(
+              clazz -> {
+                try {
+                  clazz.value();
+                } catch (MirroredTypesException mte) {
+                  for (TypeMirror typeMirror : mte.getTypeMirrors()) {
+                    beans.add(MoreTypes.asTypeElement(typeMirror));
+                  }
+                }
+              });
 
       logger.setMaxDetail(TreeLogger.Type.INFO);
       long started = System.currentTimeMillis();
