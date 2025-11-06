@@ -13,16 +13,26 @@
  * limitations under the License.
  */
 
-package org.kie.j2cl.tools.yaml.mapper.api.annotation;
+package org.kie.j2cl.tools.yaml.tests.collection.map;
 
-import static java.lang.annotation.ElementType.METHOD;
+import org.kie.j2cl.tools.yaml.mapper.api.annotation.YAMLMapper;
 
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-import java.lang.annotation.Target;
+@YAMLMapper
+public class ValueHolder {
 
-@Retention(RetentionPolicy.RUNTIME)
-@Target({METHOD})
-public @interface YamlSetter {
-  String value();
+  public String value;
+
+  public ValueHolder() {}
+
+  public ValueHolder(String value) {
+    this.value = value;
+  }
+
+  public String getValue() {
+    return value;
+  }
+
+  public void setValue(String value) {
+    this.value = value;
+  }
 }

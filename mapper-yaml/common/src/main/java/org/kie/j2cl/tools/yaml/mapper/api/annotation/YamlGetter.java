@@ -1,5 +1,4 @@
 /*
- * Copyright © 2025 Treblereel
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,7 +13,7 @@
  * limitations under the License.
  */
 
-package org.treblereel.gwt.yaml.api.annotation;
+package org.kie.j2cl.tools.yaml.mapper.api.annotation;
 
 import static java.lang.annotation.ElementType.METHOD;
 

@@ -1,5 +1,4 @@
 /*
- * Copyright © 2025 Treblereel
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,12 +13,12 @@
  * limitations under the License.
  */
 
-package org.treblereel.gwt.yaml.tests.annotations.setters;
+package org.kie.j2cl.tools.yaml.tests.annotations.setters;
 
 import java.util.Objects;
-import org.treblereel.gwt.yaml.api.annotation.YAMLMapper;
-import org.treblereel.gwt.yaml.api.annotation.YamlGetter;
-import org.treblereel.gwt.yaml.api.annotation.YamlSetter;
+import org.kie.j2cl.tools.yaml.mapper.api.annotation.YAMLMapper;
+import org.kie.j2cl.tools.yaml.mapper.api.annotation.YamlGetter;
+import org.kie.j2cl.tools.yaml.mapper.api.annotation.YamlSetter;
 
 @YAMLMapper
 public class Tested {
