@@ -57,6 +57,7 @@
         <maven.surfire.plugin>3.0.0-M1</maven.surfire.plugin>
         <maven.nexus.staging.plugin>1.6.8</maven.nexus.staging.plugin>
         <maven.scm.provider.gitexe>1.9.5</maven.scm.provider.gitexe>
+        <maven.flatten.plugin>1.5.0</maven.flatten.plugin>
 
         <javaparser.core.version>3.13.1</javaparser.core.version>
         <auto.common.version>1.2.2</auto.common.version>
@@ -338,6 +339,31 @@
                         <configuration>
                             <skip>false</skip>
                         </configuration>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>flatten-maven-plugin</artifactId>
+                        <version>${maven.flatten.plugin}</version>
+                        <configuration>
+                            <flattenMode>oss</flattenMode>
+                            <updatePomFile>true</updatePomFile>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <id>flatten</id>
+                                <phase>process-resources</phase>
+                                <goals>
+                                    <goal>flatten</goal>
+                                </goals>
+                            </execution>
+                            <execution>
+                                <id>flatten.clean</id>
+                                <phase>clean</phase>
+                                <goals>
+                                    <goal>clean</goal>
+                                </goals>
+                            </execution>
+                        </executions>
                     </plugin>
                 </plugins>
             </build>
