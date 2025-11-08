@@ -102,7 +102,7 @@ import org.kie.j2cl.tools.di.ui.templates.generator.dto.TemplateDefinition;
 import org.kie.j2cl.tools.di.ui.templates.generator.events.EventHandlerTemplatedProcessor;
 import org.kie.j2cl.tools.di.ui.templates.generator.events.EventHandlerValidator;
 import org.kie.j2cl.tools.di.ui.templates.generator.translation.TranslationServiceGenerator;
-import org.treblereel.j2cl.processors.utils.J2CLUtils;
+import org.kie.j2cl.tools.processors.utils.J2CLUtils;
 
 import static com.google.auto.common.MoreTypes.asElement;
 import static java.util.stream.Collectors.joining;

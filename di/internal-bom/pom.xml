@@ -70,7 +70,7 @@
         <lesscss.version>1.10</lesscss.version>
         <google.guava.version>28.1-jre</google.guava.version>
         <classgraph.classgraph.version>4.8.181</classgraph.classgraph.version>
-        <org.treblereel.j2cl.processors.version>0.8</org.treblereel.j2cl.processors.version>
+        <org.kie.j2cl.tools.processors.version>0.9</org.kie.j2cl.tools.processors.version>
 
         <gwt.jakarta.version>0.7</gwt.jakarta.version>
         <j2cl.platform.version>20251001-1</j2cl.platform.version>
@@ -164,9 +164,9 @@
                 <version>${lesscss.version}</version>
             </dependency>
             <dependency>
-                <groupId>org.treblereel.j2cl.processors</groupId>
+                <groupId>org.kie.j2cl.tools.processors</groupId>
                 <artifactId>utils</artifactId>
-                <version>${org.treblereel.j2cl.processors.version}</version>
+                <version>${org.kie.j2cl.tools.processors.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.mockito</groupId>
